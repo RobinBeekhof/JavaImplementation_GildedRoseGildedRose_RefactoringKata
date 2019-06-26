@@ -31,6 +31,10 @@ public class GildedRose {
     public void addAgedBrie(String name, int selIn, int quality) {
         addItem(new AgedBrie(name, selIn, quality, day.getDay(),this.day));
     }
+    public void addSulfuras() {
+        addItem(new Sulfuras(day.getDay(),this.day));
+    }
+
 
     public void printItems() {
         for (Item item : items) {
