@@ -9,15 +9,27 @@
     <artifactId>gilded-rose-kata</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
+    <developers>
+        <developer>
+            <id>robin</id>
+            <name>Robin Beekhof</name>
+            <email>rbeekhof@sogyo.nl</email>
+            <properties>
+                <active>true</active>
+            </properties>
+        </developer>
+    </developers>
+
     <properties>
         <java.version>1.8</java.version>
+        <junit.jupiter.version>5.4.2</junit.jupiter.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.jupiter.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
