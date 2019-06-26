@@ -28,6 +28,9 @@ public class GildedRose {
     public void addBackStagePass(String name, int selIn, int quality) {
         addItem(new BackStagePass(name, selIn, quality, day.getDay(),this.day));
     }
+    public void addAgedBrie(String name, int selIn, int quality) {
+        addItem(new AgedBrie(name, selIn, quality, day.getDay(),this.day));
+    }
 
     public void printItems() {
         for (Item item : items) {
