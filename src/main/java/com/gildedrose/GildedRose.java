@@ -5,14 +5,14 @@ import java.util.stream.Stream;
 
 public class GildedRose {
     private Item[] items;
-    private int day;
+    private Day day = new Day();
 
     public void endDay() {
-        day++;
+        day.addOneDay();
     }
 
     public void endDay(int days) {
-        day += days;
+        day.addMultipleDays(days);
     }
 
     private void addItem(Item item) {
@@ -26,7 +26,7 @@ public class GildedRose {
     }
 
     public void addBackStagePass(String name, int selIn, int quality) {
-        addItem(new BackStagePass(name, selIn, quality, day));
+        addItem(new BackStagePass(name, selIn, quality, day.getDay(),this.day));
     }
 
     public void printItems() {
