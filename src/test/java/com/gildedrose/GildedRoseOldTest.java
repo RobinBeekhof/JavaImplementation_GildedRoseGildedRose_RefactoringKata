@@ -4,12 +4,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class GildedRoseTest {
+public class GildedRoseOldTest {
 
     @Test
     public void testFoo() {
         Item[] items = new Item[] { new Item("foo", 0, 0) };
-        GildedRose app = new GildedRose(items);
+        GildedRose_old app = new GildedRose_old(items);
         app.updateQuality();
         assertEquals("foo", app.items[0].name);
     }
