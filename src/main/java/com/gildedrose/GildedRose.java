@@ -11,7 +11,7 @@ public class GildedRose {
         day.addOneDay();
     }
 
-    public void endDay(int days) {
+    public void endMultipleDays(int days) {
         day.addMultipleDays(days);
     }
 
