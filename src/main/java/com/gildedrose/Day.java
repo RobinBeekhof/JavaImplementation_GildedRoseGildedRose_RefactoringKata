@@ -1,17 +1,17 @@
 package com.gildedrose;
 
-public class Day {
+class Day {
     private int day;
 
-    public int getDay() {
+    int getDay() {
         return day;
     }
 
-    public void addOneDay(){
+    void addOneDay() {
         day++;
     }
 
-    public void addMultipleDays(int days){
+    void addMultipleDays(int days) {
         day += days;
     }
 }

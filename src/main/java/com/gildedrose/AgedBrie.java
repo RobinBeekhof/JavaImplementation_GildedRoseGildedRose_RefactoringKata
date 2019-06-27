@@ -1,12 +1,12 @@
 package com.gildedrose;
 
-public class AgedBrie extends ItemGR{
-    public AgedBrie(String name, int sellIn, int quality, int daySold, Day currentDay) {
+class AgedBrie extends ItemGR {
+    AgedBrie(String name, int sellIn, int quality, int daySold, Day currentDay) {
         super(name, sellIn, quality, daySold, currentDay);
     }
 
     @Override
-    public int getUpdatedQuality() {
+    int getUpdatedQuality() {
             int q = getQuality() + (getCurrentDay() - getDayAdded());
             return q >= 50 ? 50 : q;
     }

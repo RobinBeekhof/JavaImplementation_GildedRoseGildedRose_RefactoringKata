@@ -1,12 +1,12 @@
 package com.gildedrose;
 
-public class BackStagePass extends ItemGR {
-    public BackStagePass(String name, int sellIn, int quality, int daySold, Day currentDay) {
+class BackStagePass extends ItemGR {
+    BackStagePass(String name, int sellIn, int quality, int daySold, Day currentDay) {
         super(name, sellIn, quality, daySold, currentDay);
     }
 
     @Override
-    public int getUpdatedQuality() {
+    int getUpdatedQuality() {
         int q = getQuality();
         int daysPassed = getCurrentDay() - getDayAdded();
 
