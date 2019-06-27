@@ -8,12 +8,13 @@ public class Conjured extends ItemGR {
     @Override
     public int getUpdatedQuality() {
         int q = getQuality();
+        int daysPassed = getCurrentDay() - getDayAdded();
 
-        if (getCurrentDay() - getDayAdded() < getSellIn()) {
-            q -= 2 * (getCurrentDay() - getDayAdded());
+        if (daysPassed < getSellIn()) {
+            q -= 2 * daysPassed;
             return q <= 0 ? 0 : q;
         }
-        q -= 4 * (getCurrentDay() - getDayAdded() - getSellIn()) + 2 * getSellIn();
+        q -= 4 * (daysPassed - getSellIn()) + 2 * getSellIn();
         return q <= 0 ? 0 : q;
     }
 
