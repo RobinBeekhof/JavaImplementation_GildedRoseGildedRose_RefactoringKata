@@ -32,11 +32,13 @@ public class ItemGR extends Item {
     }
 
     public int getUpdatedQuality() {
+        int q = getQuality();
+
         if (getCurrentDay() - getDayAdded() < getSellIn()) {
-            int q = getQuality() - (getCurrentDay() - getDayAdded());
+            q -= (getCurrentDay() - getDayAdded());
             return q <= 0 ? 0 : q;
         }
-        int q = getQuality() - 2 * (getCurrentDay() - getDayAdded());
+        q -= 2 * (getCurrentDay() - getDayAdded() - getSellIn()) + getSellIn();
         return q <= 0 ? 0 : q;
     }
 
