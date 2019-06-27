@@ -16,25 +16,30 @@ public class GildedRose {
     }
 
     private void addItem(Item item) {
-        if (items == null){
+        if (items == null) {
             items = new Item[]{item};
-        }else{
+        } else {
             items = Stream.of(items, new Item[]{item}).flatMap(Stream::of)
                     .toArray(Item[]::new);
         }
 
     }
 
-    public void addBackStagePass(String name, int selIn, int quality) {
-        addItem(new BackStagePass(name, selIn, quality, day.getDay(),this.day));
-    }
-    public void addAgedBrie(String name, int selIn, int quality) {
-        addItem(new AgedBrie(name, selIn, quality, day.getDay(),this.day));
-    }
-    public void addSulfuras() {
-        addItem(new Sulfuras(day.getDay(),this.day));
+    public void addNormalItem(String name, int selIn, int quality) {
+        addItem(new ItemGR(name, selIn, quality, day.getDay(), this.day));
     }
 
+    public void addBackStagePass(String name, int selIn, int quality) {
+        addItem(new BackStagePass(name, selIn, quality, day.getDay(), this.day));
+    }
+
+    public void addAgedBrie(String name, int selIn, int quality) {
+        addItem(new AgedBrie(name, selIn, quality, day.getDay(), this.day));
+    }
+
+    public void addSulfuras() {
+        addItem(new Sulfuras(day.getDay(), this.day));
+    }
 
     public void printItems() {
         for (Item item : items) {
