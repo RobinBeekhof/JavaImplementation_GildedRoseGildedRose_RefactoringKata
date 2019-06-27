@@ -7,22 +7,24 @@ public class BackStagePass extends ItemGR{
 
     @Override
     public int getUpdatedQuality() {
-        int timeToEvent = getSellIn() - (getCurrentDay() - getDaySold());
+        int timeToEvent = getSellIn() - (getCurrentDay() - getDayAdded());
 
 
         if(timeToEvent > 10){
-            int q = getQuality() + (getCurrentDay() - getDaySold());
+            int q = getQuality() + (getCurrentDay() - getDayAdded());
             return q >= 50 ? 50 : q;
         }
         else if (timeToEvent <= 10 && timeToEvent > 5){
-            int q = getQuality() + 2 * (getCurrentDay() - getDaySold());
+            int q = getQuality() + 2 * (getCurrentDay() - getDayAdded());
             return q >= 50 ? 50 : q;
         }
         else if (timeToEvent <= 5 && timeToEvent > 0){
-            int q = getQuality() + 3 * (getCurrentDay() - getDaySold());
+            int q = getQuality() + 3 * (getCurrentDay() - getDayAdded());
             return q >= 50 ? 50 : q;
         }
         return 0;
+
+
 
     }
 

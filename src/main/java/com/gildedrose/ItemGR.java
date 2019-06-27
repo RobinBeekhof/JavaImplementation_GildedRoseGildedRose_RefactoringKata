@@ -1,7 +1,7 @@
 package com.gildedrose;
 
-public class ItemGR extends Item{
-    private int daySold ;
+public class ItemGR extends Item {
+    private int daySold;
     private Day currentDay;
 
     public ItemGR(String name, int sellIn, int quality, int daySold, Day currentDay) {
@@ -11,32 +11,37 @@ public class ItemGR extends Item{
 
     }
 
-    public int getDaySold() {
+    public int getDayAdded() {
         return daySold;
     }
+
     public int getCurrentDay() {
         return currentDay.getDay();
     }
-    public int getQuality(){
+
+    public int getQuality() {
         return super.quality;
     }
-    public int getSellIn(){
+
+    public int getSellIn() {
         return super.sellIn;
     }
-    public String getName(){
+
+    public String getName() {
         return super.name;
     }
-    public int getUpdatedQuality(){
 
-        if(getCurrentDay() - getDaySold() < getSellIn()){
-            int q = getQuality() - (getCurrentDay() - getDaySold());
+    public int getUpdatedQuality() {
+        if (getCurrentDay() - getDayAdded() < getSellIn()) {
+            int q = getQuality() - (getCurrentDay() - getDayAdded());
             return q <= 0 ? 0 : q;
         }
-        int q = getQuality() - 2 * (getCurrentDay() - getDaySold());
+        int q = getQuality() - 2 * (getCurrentDay() - getDayAdded());
         return q <= 0 ? 0 : q;
     }
-    public int getUpdatedSellIn(){
-        int s = getSellIn() - (getCurrentDay() - getDaySold());
+
+    public int getUpdatedSellIn() {
+        int s = getSellIn() - (getCurrentDay() - getDayAdded());
         return s > 0 ? s : 0;
     }
 

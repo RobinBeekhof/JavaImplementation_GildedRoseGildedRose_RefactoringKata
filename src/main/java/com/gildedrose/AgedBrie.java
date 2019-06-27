@@ -7,7 +7,7 @@ public class AgedBrie extends ItemGR{
 
     @Override
     public int getUpdatedQuality() {
-            int q = getQuality() + (getCurrentDay() - getDaySold());
+            int q = getQuality() + (getCurrentDay() - getDayAdded());
             return q >= 50 ? 50 : q;
     }
 
