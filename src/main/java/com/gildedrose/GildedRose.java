@@ -25,20 +25,29 @@ public class GildedRose {
 
     }
 
-    public void addNormalItem(String name, int selIn, int quality) {
+    public GildedRose addNormalItem(String name, int selIn, int quality) {
         addItem(new ItemGR(name, selIn, quality, day.getDay(), this.day));
+        return this;
     }
 
-    public void addBackStagePass(String name, int selIn, int quality) {
+    public GildedRose addBackStagePass(String name, int selIn, int quality) {
         addItem(new BackStagePass(name, selIn, quality, day.getDay(), this.day));
+        return this;
     }
 
-    public void addAgedBrie(String name, int selIn, int quality) {
+    public GildedRose addAgedBrie(String name, int selIn, int quality) {
         addItem(new AgedBrie(name, selIn, quality, day.getDay(), this.day));
+        return this;
     }
 
-    public void addSulfuras() {
+    public GildedRose addConjured(String name, int selIn, int quality) {
+        addItem(new Conjured(name, selIn, quality, day.getDay(), this.day));
+        return this;
+    }
+
+    public GildedRose addSulfuras() {
         addItem(new Sulfuras(day.getDay(), this.day));
+        return this;
     }
 
     public void printItems() {
